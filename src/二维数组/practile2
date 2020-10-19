@@ -1,0 +1,31 @@
+package 二维数组;
+
+/*
+//奇数九宫格
+public class practile2 {
+    public static void main(String[] args) {
+        int[][] num = new int[3][3];
+        int sums = 0;
+        int k=-1;
+        for (int i = 0; i < num.length; i++) {
+            int sum =0;
+            for (int j = 0; j < num[i].length; j++) {
+                num[i][j] = (int) (Math.random() * 10 - 1);
+                k=j;
+                sum += num[i][j];
+            }   if (sum == 15) {
+                System.out.print(num[i][k] + "\t");
+            } else {
+                i--;
+                continue;
+            }System.out.println();
+
+
+        }
+
+
+
+    }
+}
+*/
+
