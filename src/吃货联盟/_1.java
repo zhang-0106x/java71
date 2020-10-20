@@ -66,6 +66,7 @@ public class _1 {
                             System.out.println("订餐成功！");
                             System.out.println("您订的是:" + dishMeg);
                             System.out.println("送餐时间:" + time + "点");
+                            System.out.println("送餐地址:"+address);
                             System.out.println("餐费:" + sumPrice + "元，送餐费" + deliCharge + "元，" +
                                     "总计:" + (sumPrice + deliCharge) + "元。");
                             //添加数据
@@ -89,14 +90,15 @@ public class _1 {
                     break;
                 case 2:
                     System.out.println("*****查看餐袋*****");
-                    System.out.println("序号" + "\t" + "订餐人" + "\t" + "餐品信息" + "\t\t" + "送餐时间" + "\t" + "送餐地址" + "\t\t" + "总金额" + "\t" + "订单状态");
+                    System.out.println("序号" + "\t\t" + "订餐人" + "\t\t   " + "餐品信息" + "\t\t\t" + "送餐时间" + "\t\t" +
+                            "送餐地址" + "\t\t\t" + "总金额" + "\t\t" + "订单状态");
                     for (int i = 0; i < names.length; i++) {
                         if (names[i] != null) {
                             String state = (states[i] == 0) ? "已预订" : "已完成";
                             String date = times[i] + "点";
                             String sumPrice = sumPrices[i] + "元";
-                            System.out.println((i + 1) + "\t" + date + "\t" + disMegs[i] + "\t" + date +
-                                    "\t" + addresses[i] + "\t" + sumPrice + "\t" + state);
+                            System.out.println((i + 1) + "\t\t " + names[i]  + "\t\t   " + disMegs[i] + "\t\t\t" + date +
+                                    "\t\t" + addresses[i] + "  \t\t\t" + sumPrice + "\t\t" + state);
 
 
                         }
@@ -123,7 +125,7 @@ public class _1 {
                         }
                     }
                     //未找到的订单序号，不可签收
-                    if (isSignFind) {
+                    if (!isSignFind) {
 
                         System.out.println("您选择的订单不存在！");
 
@@ -134,6 +136,7 @@ public class _1 {
                     break;
                 case 4://删除订单
                     System.out.println("*****删除订单*****");
+
                     boolean isDelFind = false;   //标记是否找到要删除的订单
                     System.out.println("请输入要删除的订单序号:");
                     int delId = input.nextInt();
@@ -170,7 +173,7 @@ public class _1 {
                         }
                     }
                     //未找到改序号的订单:不能删除
-                    if (isDelFind) {
+                    if (!isDelFind) {
                         System.out.println("您要删除的订单不存在！");
                     }
 
@@ -192,12 +195,14 @@ public class _1 {
 
                     break;
                 case 6:
-
+                    System.out.println("谢谢使用，再见！");
                     isEsc = true;
+
                     break;
 
                 default:
-                    isEsc = true;
+                    System.out.println("输入错误，请重新输入");
+
                     break;
             }
 
